@@ -21,3 +21,11 @@ function convertToUmlauts(text) {
 
   return text;
 }
+
+document.getElementById('selectAllBtn').addEventListener('click', function() {
+  var outputText = document.getElementById('output');
+  var range = document.createRange();
+  range.selectNodeContents(outputText);
+  window.getSelection().removeAllRanges();
+  window.getSelection().addRange(range);
+});
