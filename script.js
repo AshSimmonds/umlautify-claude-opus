@@ -1,17 +1,23 @@
 document.getElementById('convertBtn').addEventListener('click', function() {
   var inputText = document.getElementById('inputText').value;
-  var convertedText = convertSpecialCharacters(inputText);
+  var convertedText = convertToUmlauts(inputText);
   document.getElementById('output').textContent = convertedText;
 });
 
-function convertSpecialCharacters(text) {
+function convertToUmlauts(text) {
   var map = {
-    '&': '&amp;',
-    '<': '&lt;',
-    '>': '&gt;',
-    '"': '&quot;',
-    "'": '&#039;'
+    'ae': 'ä',
+    'oe': 'ö',
+    'ue': 'ü',
+    'Ae': 'Ä',
+    'Oe': 'Ö',
+    'Ue': 'Ü',
+    'ss': 'ß'
   };
 
-  return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+  for (var plain in map) {
+    text = text.replace(new RegExp(plain, 'g'), map[plain]);
+  }
+
+  return text;
 }
