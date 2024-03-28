@@ -60,7 +60,9 @@ button {
   background-color: rgba(0, 0, 0, 0.8);
   border-radius: 5px;
   white-space: pre-wrap;
-  color: #00ff00;
+  color: #00ffff;
+  user-select: text;
+  cursor: text;
 }
 
 @media screen and (max-width: 600px) {
