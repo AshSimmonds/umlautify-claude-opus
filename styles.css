@@ -63,6 +63,7 @@ button {
   color: #00ffff;
   user-select: text;
   cursor: text;
+  border: 1px solid rgba(0, 255, 255, 0.3);
 }
 
 footer {
